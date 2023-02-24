@@ -1,0 +1,180 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit; 
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/beanstalk-dark.png");
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    margin-top: 1%;
+    text-align: center;
+}
+
+main {
+    margin: 1% auto;
+    width: 90%;
+}
+
+section:first-of-type {
+    margin-bottom: 2em;
+}
+
+h1 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-weight: 100;
+    color: white;
+    font-size: 2em;
+    background-image: linear-gradient(to right, #ff66cc 0%, yellow 35%, #66ccff 75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 8px;
+    display: inline-block;
+    background-size: 200% auto;
+}
+
+h1:hover {
+    animation: rainbow 1.1s ease-in infinite;
+}
+
+@keyframes rainbow { 
+    0% { background-position: left; }
+    50% { background-position: right; }
+    100% { background-position: left; }
+}
+
+h2 {
+    color: white;
+    letter-spacing: 5px;
+}
+
+input {
+    width: 95%;
+    font-size: 1.5em;
+    padding: 10px 0;
+    margin: 0 auto;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    text-align: center;
+}
+
+input::placeholder {
+    font-family: 'Poppins', sans-serif;
+}
+
+.carousel {
+    overflow-x: scroll;
+    width: 100%;
+}
+
+.carousel::-webkit-scrollbar {
+    height: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background: darkred;
+    background: linear-gradient(to left, #ff66cc 0%, yellow 50%, #66ccff 100%);
+    border-radius: 10px;
+}
+
+.carousel::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to left, #ff1ab3 0%, #cccc00 50%, #1ab3ff 100%);
+}
+
+.row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.gif_box {
+    position: relative;
+}
+
+.gif_frame {
+    height: 200px;
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.gif_img {
+    height: 100%;
+    display: block;
+}
+
+.gif_box:hover .user_overlay {
+    opacity: .9;
+}
+
+.user_overlay {
+    opacity: 0;
+    -webkit-transition: .5s ease;
+    -moz-transition: .5s ease;
+    -o-transition: .5s ease;
+    transition: .5s ease;
+}
+
+.user_frame {
+    color: white;
+    font-size: .9em;
+    text-decoration: none;
+    -webkit-transition: color .2s;
+    -moz-transition: color .2s;
+    -o-transition: color .2s;
+    transition: color .2s; 
+}
+
+.user_frame:hover {
+    color: #66ccff;
+}
+
+.user {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(-5px);
+    height: 40px;
+    width: 100%;
+    background-color: black;
+}
+
+.gif_user   {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+}
+
+.user_img {
+    margin-right: 8px;
+    width: 30px;
+    height:30px;
+}
+
+@media screen and (min-width: 900px) {
+    main {
+        width: 80%;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    input {
+        width: 100%;
+    }
+
+}

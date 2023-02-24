@@ -1,0 +1,448 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Sedgwick+Ave&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    height: 100%;
+    border: none;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block !important;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: white;
+}
+
+nav img[alt~=Logo] {
+    width: 250px;
+    position: relative;
+    z-index: 3;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+nav ul li {
+    list-style-type: none;
+}
+
+nav ul li a {
+    display: inline-block;
+    text-align: left;
+    padding: 18px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+nav ul li a:only-of-type {
+    font-weight: bold;
+    width: 100%;
+}
+
+li a:hover {
+    background-color: #d8d8d8;
+}
+
+.close {
+    margin: auto 10px;
+    position: relative;
+    z-index: 3;
+    font-size: 1.5em;
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+#nav-menu--links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    padding-top: 80px;
+    -webkit-animation: slideIn .4s;
+    -moz-animation: slideIn .4s;
+    -o-animation: slideIn .4s;
+    -ms-animation: slideIn .4s;
+    animation: slideIn .4s;
+    z-index: 2;
+    background-color: white;
+}
+
+@keyframes slideIn {
+    from {right: -300px; opacity: 0;}
+    to {right: 0; opacity: 1;}
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    color: #363636;
+    margin-left: 30px;
+}
+
+.dropdown-menu a:hover {
+    background-color: #d8d8d8;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+}
+
+header img {
+    width: 100%;
+}
+
+header h1 {
+    color: white;
+    font-family: 'Sedgwick Ave', sans-serif;
+    font-size: 2em;
+}
+
+#header-menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+#header-menu button {
+    outline: none;
+    border: none;
+    width: 170px;
+    padding: 15px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 0 5px 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: .1s ease all;
+    position: relative;
+}
+
+#header-menu button:first-of-type {
+    background-color: #CB7BAF;
+    box-shadow: 0 3px #A2628C;
+}
+
+#header-menu button:first-of-type:hover {
+    background-color: #A2628C;
+    box-shadow: 0 3px #714462;
+    color: white;
+}
+
+#header-menu button:first-of-type:active {
+    top: 1px;
+    box-shadow: 0 1px #714462;
+}
+
+#header-menu button:nth-of-type(2) {
+    background-color: #6FCCD6;
+    box-shadow: 0 3px #4D8E95;
+}
+
+#header-menu button:nth-of-type(2):hover {
+    background-color: #4D8E95;
+    box-shadow: 0 3px #356368;
+    color: white;
+}
+
+#header-menu button:nth-of-type(2):active {
+    top: 1px;
+    box-shadow: 0 1px #356368;
+}
+
+main {
+    background-color: white;
+    margin: 0 auto;
+    width: 100%;
+}
+
+section {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#section-highlights {
+    background-color: #eeeaea;
+    position: relative;
+    top: -5px;
+}
+
+#section-highlights div {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+#section-highlights article {
+    text-align: justify;
+    width: 30%;
+}
+
+#section-highlights h2 {
+    font-size: .8em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#section-highlights p {
+    display: none;
+}
+
+#section-highlights img {
+    width: 75px;
+    margin: 0 auto;
+    display: block;
+}
+
+#section-video {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+}
+#section-video > * {
+    width: 100%;
+}
+#section-video h3 {
+    text-align: center;
+    margin: 10px auto;
+}
+#section-video div {
+    text-align: justify;
+}
+
+#section-creations {
+    background-color: #18CFBC;
+    padding-bottom: 70px;
+}
+
+#section-creations h2 {
+    margin-bottom: 30px;
+}
+
+.carousel-item div {
+    position: relative;
+}
+
+.overlay {
+    display: none;
+}
+
+#section-creations img {
+    background-color: white;
+    padding: 5px;
+}
+
+
+
+.section-reviews--container {
+    margin: 40px auto;
+}
+.section-reviews--container p {
+    font-size: 1.3em;
+}
+.reviews {
+    font-style: italic;
+    margin-bottom: 100px;
+    display: none;
+}
+.reviews-name {
+    font-size: .8em !important;
+    text-align: center;
+    display: block;
+    margin: 10px;
+}
+.arrow {
+    cursor: pointer; 
+    color: #CB7BAF;
+    width: 20px;
+}
+.dot {
+    height: 15px;
+    width: 15px;
+    border: 1px solid #CB7BAF;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+.selected {
+    background-color: #CB7BAF;
+}
+#controls {
+    display: flex;
+    justify-content: space-around;
+}
+
+footer {
+    background-color: #3E3042;
+    color: white;
+    width: 100%;
+    padding: 50px;
+    margin-bottom: 0;
+    border: 1px solid #3E3042;
+    text-align: center;
+}
+
+
+
+
+@media screen and (min-width: 630px) {
+    section {
+        padding: 50px auto;
+    }
+    #section-highlights div, #section-video, #section-creations--container, #section-reviews  {
+        width: 80%;
+        margin: 0 auto;
+    }
+    #section-highlights p {
+        display: block;
+    }    
+    #section-highlights img {
+        width: 100px;
+    }
+    #section-highlights h2 {
+        font-size: 1.2em;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 850px) {
+    .float-left {
+        position: relative !important;
+    }
+    #section-creations img {
+        cursor: pointer;
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .overlay {
+        display: block;
+        position: absolute; 
+        bottom: 100px; 
+        background: rgb(0, 0, 0);
+        background: rgba(0, 0, 0, 0.5); 
+        color: #f1f1f1; 
+        width: 100%;
+        transition: .5s ease;
+        opacity:0;
+        color: white;
+        font-size: 20px;
+        padding: 20px;
+        text-align: center;
+    }
+    .float-left:hover .overlay {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    section {
+        padding: 70px;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        position: relative;
+        margin-right: 5px;
+    }
+
+    nav ul li {
+        display: inline-block;
+    }
+
+    nav ul li a:only-of-type {
+        font-weight: normal;
+        width: initial;
+    }    
+    
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 2;
+        border-radius: 0 0 5px 5px;
+        padding: 5px 0;
+    }
+
+    .dropdown-menu a {
+        margin-left: 0;
+    }
+      
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown:hover .dropdown-btn {
+        background-color: #d8d8d8;
+    }
+    
+    #nav-menu--links {
+        width: 100%;
+        padding-top: 0;
+        position: relative;
+        -webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+    }
+    header h1 {
+        font-size: 2.5em;
+    }
+    #section-video {
+        flex-flow: row wrap;
+    }
+    #section-video > * {
+        width: 49%;
+    }
+    #section-video div {
+        margin-left: 2%;
+    }
+
+    .reviews {
+        margin-bottom: 70px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    header h1 {
+        font-size: 3.5em;
+    }
+    #section-highlights div, #section-video, #section-creations--container, #section-reviews {
+        width: 60%;
+        margin: 0 auto;
+    }
+}

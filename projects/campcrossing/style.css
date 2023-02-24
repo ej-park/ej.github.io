@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Roboto&display=swap');
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: lightcyan;
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/cloudy-day.png);
+  height: 100%;
+}
+
+header {
+  background-color: #9E6633;
+  position: relative;
+  z-index: 1;
+  background-image: url(https://image.freepik.com/free-vector/brown-wooden-background_53876-91618.jpg);
+  box-shadow: 0 5px 10px black;
+  margin: 30px auto 0;
+  padding: 5px;
+  width: 85%;
+  border-radius: 5px 0;
+  transform: rotate(-.4deg);
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  letter-spacing: 4px;
+  font-size: 2.5em;
+  text-align: center;
+  color: #FDCF4F;
+  text-shadow: -2px 5px 1px #2d1309;
+  position: relative;
+  margin: 0;
+  padding-bottom: 10px;
+  transform: rotate(.4deg);
+}
+
+h1 a {
+  position: relative;
+}
+
+h1 a:link, h1 a:visited {
+  color: #FDCF4F;
+}
+
+h1 a:hover {
+  top: 3px;
+  text-shadow: -1px 3px 1px #2d1309;
+}
+
+h1 a:active {
+  top: 0;
+  text-shadow: -2px 5px 1px #2d1309;
+}
+
+main, footer {
+  width: 80%;
+  padding: 10px;
+  box-shadow: 0 0 8px 0 #495653;
+}
+
+main {
+  background-image: url(https://www.toptal.com/designers/subtlepatterns/patterns/leaves.png);
+  min-height: 100%;
+  margin: 0 auto;
+}
+
+#welc, #game {
+  margin: 5% 2%;
+  line-height: 24px;
+  text-align: justify;
+}
+
+#health {
+  margin: 2% auto;
+  padding: 5px 10px;
+  text-align: center;
+}
+
+#health img {
+  width: 40px;
+  margin: auto 5px;
+}
+
+#payout, #bonus {
+  text-align: center;
+}
+
+#bonus {
+  margin-bottom: 0;
+}
+
+#push {
+  width: 100px;
+  height: 50px;
+}
+
+#buttons {
+  text-align: center;
+  width: 100%;
+}
+
+#buttons button {
+  margin: 3% auto;
+  width: 80%;
+}
+
+button {
+  position: relative;
+  background-color: #53C455;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1.2em;
+  margin: 3% auto;
+  display: block;
+  border-bottom: 3px solid #21552C;
+  box-shadow: 0 3px darkgray;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.timeColor {
+  background-color: gray;
+  border-color: black;
+}
+
+button:hover {
+  box-shadow: 0 0 darkslategray;
+  border-bottom: 1px solid #21552C;
+  top: 3px;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  background-color: #8AEC95;
+}
+  
+#log {
+  overflow-y: hidden;
+  height: 300px;
+  margin: 1% auto 0;
+}
+
+footer {
+  background-color: #2D3319;
+  color: #DED6D6;
+  text-align: center;
+  position: relative;
+  z-index: -1;
+  border-radius: 0 0 10px 10px;
+  margin: 0 auto 30px;
+}
+
+footer a:link, footer a:visited {
+  color: white;
+  -webkit-transition:color .2s;
+  -moz-transition:color .2s;
+  -o-transition:color .2s;
+  transition:color .2s
+}
+
+footer a:hover {
+  color: #FDCF4F;
+}
+
+footer a:active {
+  color: lightcyan;
+}
+
+@media screen and (min-width:900px) {
+  header {
+    width: 80%;
+  }
+  h1 {
+    font-size: 3.5em;
+  }
+  main, footer {
+    width: 75%;
+  }
+  #buttons button {
+    display: inline;
+    width: 40%;
+    margin: 1%;
+  }
+}

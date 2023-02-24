@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Grace Park | Portfolio</title>
+    <meta name="description" content="Hi, I'm Grace. I'm a front-end web developer and this is my portfolio where you can see some of my recent projects. This is an entirely bespoke website built using HTML, CSS, and JavaScript.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/e3647d0d31.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a id="nav-logo" href="#welcome">Grace Park</a>
+            <div class="nav-links">
+                <a id="nav-links-mobile"><i class="fas fa-bars"></i></a>
+                <ul id="nav-links-desktop">
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section id="welcome" class="parallax">
+        <div class="text-center">
+            <h1 class="text-bg-white">Hi, I&#39;m Grace</h1>
+            <h2 class="text-bg-white">Front-End Web Developer</h2>
+        </div>
+        <a href="#projects"><i class="fas fa-chevron-down"></i></a>
+    </section>
+    
+    <main id="projects">
+        <div class="content-margin">
+
+            <h3>Projects</h3>
+            <ul id="projects-btn">
+                <li>Newest First</li>
+                <li>Oldest First</li>
+            </ul>
+
+            <div id="projects-sort"> <!-- Sort function classes added to this div -->
+
+                <div class="project">
+                    <div class="project-col">
+                        <a href="https://codepen.io/kgpark/full/WNvqWNR" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_monsters.PNG" alt="Manors & Monsters Thumbnail">
+                                <figcaption>CSS, JS</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>Manors &amp; Monsters</p>
+                            <p>A monster-themed dating app idea. I had a roaring good time writing those bios. All character images are official Dungeons &amp; Dragons monster art. This 4 "page" SPA employs modal windows, objects, arrays, and is mobile-responsive. </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>Campsite Crossing</p>
+                            <p>Combining my two loves &mdash; Animal Crossing and text-based games &mdash; I created this short ~3 minute game, my first ever. Looking back, I realize there is a lot that can be improved on and code that can be cleaned up, but I am still so happy with my work. Utilizes popups, math objects, timing events, DOM manipulation, and is mobile-responsive.</p>
+                        </div>
+                    </div>
+                    <div class="project-col">
+                        <a href="https://codepen.io/kgpark/full/GRJXGJr" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_camp.png" alt="Campsite Crossing Thumbnail">
+                                <figcaption>CSS, JS</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-col">
+                        <a href="http://developergrace.com/projects/stickers/" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_stickers.png" alt="ManyStickers Thumbnail">
+                                <figcaption>Bootstrap, JS</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>ManyStickers</p>
+                            <p>A fun eCommerce-type landing page using Bootstrap carousel and otherwise pure CSS and JS for responsiveness.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>FoodVerse</p>
+                            <p>Snapchat hackathon entry. FoodVerse is a restaurant search engine that filters out large chains to only display small and locally-owned businesses. Served as the front-end developer to design and build the entire UI. Mobile-responsive.</p>
+                        </div>
+                    </div>
+                    <div class="project-col">
+                        <a href="http://foodverse.herokuapp.com/" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_foodverse.png" alt="FoodVerse Thumbnail">
+                                <figcaption>EJS & APIs</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-col">
+                        <a href="http://developergrace.com/projects/vue/" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_giphy.png" alt="Giphy Simple Thumbnail">
+                                <figcaption>Vue.JS &amp; APIs</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>Giphy Simple</p>
+                            <p>After hearing such rave reviews on Vue.JS, I knew I had to delve deeper. A small search engine created using Vue.JS and Giphy's API. Design features scrollbar styling and hover effects. Mobile-responsive.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>Adventure Awaits</p>
+                            <p>A kids' sleep-away camp design featuring a video header, or image if the browser does not support video, and responsive "table". Form has backend validation and is connected to a mySQL database. Submitted information IS saved and will display on the page, please do not share sensitive information! Mobile-responsive.</p>
+                        </div>
+                    </div>
+                    <div class="project-col">
+                        <a href="http://developergrace.com/projects/crudcamp/" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_crud.png" alt="Crud Camp Thumbnail">
+                                <figcaption>HTML, PHP, SQL</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-col">
+                        <a href="https://devgrace.herokuapp.com/tutor/lorem/lorem.php" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_ipsum.png" alt="Ipsum Generator Thumbnail">
+                                <figcaption>PHP Loops &amp; Arrays</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>Ipsum's For Closers Only</p>
+                            <p>A lorem ipsum generator. Each paragraph will contain between 5 and 10 sentences, and each sentence will have between 5 and 20 words. All text is from Glengarry Glen Ross' famous monologue; please mind the language. Mobile-responsive.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project">
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>SRB Retreat &amp; Spa</p>
+                            <p>A pet project I started to practice JS. A relaxing spa &amp; resort-themed SPA featuring expanding image panels, transition effects, and a PHP form with sticky fields and backend validation. Submitted information is not saved. Mobile-responsive.</p>
+                        </div>
+                    </div>
+                    <div class="project-col">
+                        <a href="http://developergrace.com/projects/spa/" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_srb.png" alt="SRB Spa Thumbnail">
+                                <figcaption>JS, PHP</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-col">
+                        <a href="https://codepen.io/kgpark/full/mdJvROO" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_banana.png" alt="Strings & Arrays Thumbnail">
+                                <figcaption>JS String &amp; Array Methods</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>The Republic of Banana</p>
+                            <p>Practice using string and array methods featuring input validation, see-through content, and a lovely banana motif. Mobile-responsive.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project">
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>5 Qualities of JS Programmers</p>
+                            <p>I'm loving my office-themed programmer page. Features event listeners, validation, DOM shenanigans, and cute randomized colors all over the place.</p>
+                        </div>
+                    </div>
+                    <div class="project-col">
+                        <a href="https://codepen.io/kgpark/full/ZEbKBKa" target="_blank" rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_qualities.PNG" alt="JS Qualities of JS Programmers Thumbnail">
+                                <figcaption>JS DOM Manipulation</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+                
+                <div class="project">
+                    <div class="project-col">
+                        <a href="https://cosw30-grace.herokuapp.com/portfolio/index.php" target="_blank"  rel="noopener noreferrer">
+                            <figure class="project-col-preview">
+                                <img src="images/project_old.png" alt="Older Works Thumbnail">
+                                <figcaption>HTML, CSS</figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="project-col project-col-drop">
+                        <div class="project-col-info">
+                            <p>Older Works</p>
+                            <p>These are the ancients, my favorite projects from my first coding class. See where I started and how far I've come.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!-- Closing projects-sort div -->
+        </div> <!-- Closing content-margin div -->
+    </main>
+    
+    <section id="about" class="parallax">
+        <div class="content-margin">
+            <h3>About</h3>
+            <div class="text-bg-white about-content">
+                
+                <img src="images/gp.jpg" alt="Grace Park">
+                
+                <p>Hi, I’m Grace. I’m a web developer, UX designer, and full-time food enthusiast based in Long Beach, CA. Coding and design have been a part of me since I was a kid. I've developed my skills through my work as an Embedded Tutor at LBCC, my time at Snapchat, and as a freelance full-stack developer. These are the areas I'm confident in:</p>
+                <ul>
+                    <li><b>Front-End:</b> JavaScript, Vue.JS, jQuery, CSS, SASS/SCSS, HTML, Bootstrap, Bulma</li>
+                    <li><b>Back-End:</b> SQL, mySQL, PHP, Laravel</li>
+                    <li><b>Other:</b> AWS, WordPress, Wix</li>
+                </ul>
+                
+                <p>Mobile responsiveness is my first priority and I use a mobile-first approach when creating my web pages. My aesthetic leans towards bright, colorful designs and I love utilizing animations and transition effects. I am fascinated by how design intersects with human experience and UX and accessibility are areas I want to grow in.</p>
+                
+                <p>This site is fully responsive and coded in pure HTML, CSS, and JavaScript (though it functions properly without it). It was originally built using the Bulma framework, SCSS, and jQuery, but I've since updated all the code and removed its dependency on those frameworks! To see what this page's code looked like before, <a href="https://codepen.io/kgpark/full/xvXOav" target="_blank" rel="noopener noreferrer">head over to CodePen</a>.</p>
+                
+                <p><b>Awards &amp; Certifications:</b> MTA Database Fundamentals (2020), MTA Programming with JavaScript (2020), MTA Programming with HTML and CSS (2019), Dean's List with Greatest Distinction 4.0 GPA (2019)</p>
+                
+                <p>Like what you see? Let's work together!</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="text-center">
+            <p>I'm Free For Lunch</p>
+            <div id="contact-info">Contact Me</div>
+            <div class="contact-links">
+                <!-- Whitespace Removed Start -->
+<a href="mailto:gpark2351@gmail.com"><i class="far fa-envelope" title="Email"></i></a><a href="https://github.com/developergrace" target="_blank"  rel="noopener noreferrer"><i class="fab fa-github-alt" title="Github"></i></a><a href="https://www.linkedin.com/in/devgrace/" target="_blank"  rel="noopener noreferrer"><i class="fab fa-linkedin-in" title="LinkedIn"></i></a><a href="https://codepen.io/kgpark/" target="_blank" rel="noopener noreferrer"><i class="fab fa-codepen" title="CodePen"></i></a><a href="https://www.freecodecamp.org/gracep" target="_blank" rel="noopener noreferrer"><i class="fab fa-free-code-camp" title="FreeCodeCamp"></i></a>                 <!-- Whitespace Removed End -->
+            </div>
+            
+        </div>
+    </footer>
+
+
+
+    <script src="behaviors.js"></script>
+
+
+</body>
+</html>

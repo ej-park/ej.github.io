@@ -1,0 +1,455 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Campsite Crossing</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <h1><a href="">Campsite Crossing</a></h1>
+        </header>
+        
+        <main>
+          <div id="welc" style="display:block"><p>Welcome to Campsite Crossing! This is a resource management game where you will collect camping supplies and monitor your energy. You will run into chance events with different outcomes based on your decisions, and you will lose resources and energy as time goes on. Your trip is over when you've either filled your energy bar with 8 hearts, or when you lose all your hearts.</p><p>This game was created as a classroom assignment. In the interest of my professor's time, I have made it so that all events will set off within a 2 minute time frame of starting the game.</p><p>Click the Play button to start the character creator and begin the game.</p></div>
+          <button id="push" onClick="play()">Play</button>
+          
+          <div id="game" style="display:none">
+            <div id="health"></div>
+        
+            <div id="buttons">
+              <button id="tp" onClick="trade()">Trading Post</button>
+              <button id="cr" onClick="collect()">Collect Resources</button> 
+            </div>
+        
+            <p id="payout"></p>
+            <p id="bonus"></p>
+            <div id="log"></div>
+            
+          </div>
+          
+        </main>
+        
+        <footer>
+          <p><a href="http://developergrace.com" target="_blank">&copy; 2020 Grace Park</a></p>
+        </footer>
+        
+        <script>
+            welc = document.getElementById("welc");
+            game = document.getElementById("game");
+            health = document.getElementById("health");
+            push = document.getElementById("push");
+            log = document.getElementById("log");
+            payout = document.getElementById("payout");
+            tp = document.getElementById("tp");
+            cr = document.getElementById("cr");
+            bonus = document.getElementById("bonus");
+            
+            function error() {
+              alert("Invalid input, try again.");
+            }
+            
+            function play() {
+               intro = confirm("Let's play Campsite Crossing! These questions will determine your character's starting stats. Press OK to continue.");
+               if(intro) {
+                 nameQ = prompt("Enter your name.");
+                 if(nameQ) {
+                   supplies();
+                 } 
+               } else {
+                  alert("Boo, maybe next time. See you later!");
+                  game.style.display = "none";
+                  push.style.display = "block";
+              }
+            }
+            
+            function supplies() {
+              suppliesQ = prompt("How much preparation have you done for this trip?\n\n[G] Great [A] Adequate [P] Poor");
+              if(suppliesQ.toUpperCase() == "G") {
+                firewood = 50;
+                berries = 30;
+                mushrooms = 10;
+                tin_beans = 2;
+                camper();
+              } else if(suppliesQ.toUpperCase() == "A") {
+                firewood = 25;
+                berries = 15;
+                mushrooms = 5;
+                tin_beans = 1;
+                camper();
+              } else if(suppliesQ.toUpperCase() == "P") {
+                firewood = 0;
+                berries = 0;
+                mushrooms = 0;
+                tin_beans = 0;
+                camper();
+              } else {
+                error();
+                supplies();
+              }
+            }
+            
+            function camper() {
+              campQ = prompt("What is your level of camping experience?\n\n[H] High [A] Adequate [L] Low");
+              if(campQ.toUpperCase() == "H") {
+                for(i = 0; i < 4; i++) {
+                  hearts();
+                }
+                heart = 4;
+                bonusItem();
+              } else if(campQ.toUpperCase() == "A") {
+                for(i = 0; i < 3; i++) {
+                  hearts();
+                }
+                heart = 3;
+                bonusItem();
+              } else if(campQ.toUpperCase() == "L") {
+                for(i = 0; i < 2; i++) {
+                  hearts();
+                }
+                heart = 2;
+                bonusItem();
+              } else {
+                error();
+                camper();
+              }
+            }
+            
+            function hearts() {
+                newImg = document.createElement("img");
+                newImg.src = "https://storage.needpix.com/rsynced_images/pixel-355142_1280.png";
+                newImg.alt = "Health Indicator";
+                health.appendChild(newImg, health.childNodes[0]);
+            }
+            
+            function checkHealth() {
+              if(heart == 0) {
+                health.innerHTML = "";
+                setTimeout(function() {
+                  alert("You are at 0 hearts.");
+                  alert("Camping has completey worn you out. Time to pack it up and go home.");
+                  clear();
+                }, 300);
+              } 
+              else if(heart == 8) {
+                setTimeout(function() {
+                  alert("Your energy levels are through the roof and you feel completely rejuvenated from your camping trip. It's time to head back to reality...");
+                  clear();
+                }, 300);
+              }
+            }
+            
+            function clear() {
+              heart = 0;
+              health.innerHTML = "";
+              game.style.display = "none";
+              push.style.display = "block";
+              welc.style.display = "block";
+              clearInterval(tk);
+              clearInterval(ha);
+              clearTimeout(ev1);
+              clearTimeout(ev2);
+              clearTimeout(fam);
+              clearTimeout(rain);
+            }
+            
+            function bonusItem() {
+              bonusQ = prompt("Choose a personal item to take with you on your trip. This item may come in handy later.\n\n[W] Watch [C] Compass");
+              if(bonusQ.toUpperCase() == "W") {
+                bonus.innerHTML = "Watch";
+                start();
+              } else if(bonusQ.toUpperCase() == "C") {
+                bonus.innerHTML = "Compass";
+                start();
+              } else {
+                error();
+                bonusItem();
+              }
+            }
+            
+            function start() {
+              alert("You've arrived at your campsite! Click Collect Resources to gain random resources every 5 seconds.");
+                 log.innerHTML = "<p>> Your starting resources include " + firewood + " firewood, " + berries + " berries, " + mushrooms + " mushrooms, and " + tin_beans + " tins of beans." + "</p><p>> Your starting energy is " + heart + " hearts.</p><p>> Welcome to Campsite Crossing " + nameQ + "!</p>";
+                payout.innerHTML = firewood + " firewood, " + berries + " berries, " + mushrooms + " mushrooms, " + tin_beans + " tins of beans";
+                 game.style.display = "block";
+                 push.style.display = "none";
+                 welc.style.display = "none";
+              
+                ev1 = setTimeout(event1, 30000);
+                tk = setInterval(take, 20000);
+                ha = setInterval(function() {
+                  heart -= 1;
+                  health.removeChild(health.firstChild);
+                  newP = document.createElement("p");
+                  textNode = document.createTextNode("> You're worn out from hiking, you lost a heart. You now have " + heart + " hearts.");
+                  newP.appendChild(textNode);
+                  log.insertBefore(newP, log.childNodes[0]);
+                  checkHealth();
+                }, 65000);
+            }
+            
+            function event1() {
+              e1 = confirm("On the way back to your tent, you run into a fellow camper and their family. They are low on supplies and have asked to use some of yours.\n\nClick OK to share, or Cancel to reject.");
+              newP = document.createElement("p");
+              textNode = document.createTextNode("> A family of campers have asked for help.");
+              newP.appendChild(textNode);
+              log.insertBefore(newP, log.childNodes[0]);
+              
+              if(e1) {
+                alert("You share half your supplies with the family. They promise to pay you back.");
+                fw = Math.floor(firewood / 2);
+                firewood -= fw;
+                br = Math.floor(berries / 2);
+                berries -= br;
+                ms = Math.floor(mushrooms / 2);
+                mushrooms -= ms;
+                tb = Math.floor(tin_beans / 2);
+                tin_beans -= tb;
+                resourceUpdate("shared ");
+                
+                fam = setTimeout(function() {
+                  alert("The family returned with supplies. Your energy increased by 2!");
+                  heart += 2;
+                  for(i = 1; i <= 2; i++) {
+                    hearts();
+                  }
+                  checkHealth();
+              
+                newP = document.createElement("p");
+                textNode = document.createTextNode("> The family you helped returned with energy boosters. You now have " + heart + " hearts.");
+                newP.appendChild(textNode);
+                log.insertBefore(newP, log.childNodes[0]);
+              
+                ev2 = setTimeout(event2, 30000);
+                }, 10000);
+                
+              } else {
+                alert("You gently turn them down and think to yourself that they should have prepared better.");
+                newP = document.createElement("p");
+                textNode = document.createTextNode("> You turned away the family of campers.");
+                newP.appendChild(textNode);
+                log.insertBefore(newP, log.childNodes[0]);
+                
+                rain = setTimeout(function() {
+                    alert("It begins raining heavily and you start to feel sick. Your energy decreased by 1!");
+              heart -= 1;
+              health.removeChild(health.firstChild);
+              checkHealth();
+              
+              newP = document.createElement("p");
+              textNode = document.createTextNode("> Heavy rain affects your energy levels. You now have " + heart + " hearts.");
+              newP.appendChild(textNode);
+              log.insertBefore(newP, log.childNodes[0]);
+              
+              ev2 = setTimeout(event2, 30000);
+                }, 10000);
+              }
+            }
+            
+            function event2() {
+              if(bonus.innerHTML == "Watch") {
+                watch = confirm("Oh no, it's a camping nightmare: a social media influencer! You look at your watch and seem to recall something about a once in a lifetime sunset happening in 20 minutes...\n\nClick OK to lie, or Cancel to stay put.");
+                
+                newP = document.createElement("p");
+                textNode = document.createTextNode("> You run into a social media influencer.");
+                newP.appendChild(textNode);
+                log.insertBefore(newP, log.childNodes[0]);
+                
+                if(watch) {
+                  alert("They take the bait! Influencers can never miss a hot photo op like that! You finally have some peace & quiet.\n\n+1 heart.");
+                heart += 1;
+                hearts();
+                  
+                newP = document.createElement("p");
+                textNode = document.createTextNode("> Peace & quiet gives you strength. You now have " + heart + " hearts.");
+                newP.appendChild(textNode);
+                log.insertBefore(newP, log.childNodes[0]);
+                checkHealth();
+            
+                } else {
+                  alert("You ignore the thought, lying is no way to deal with things. The influencer strikes up a conversation and shares some of their things. Hey, they're actually pretty nice!\n\nx2 resources.");
+                  fw = firewood;
+                  firewood += fw;
+                  br = berries;
+                  berries += br;
+                  ms = mushrooms;
+                  mushrooms += ms;
+                  tb = tin_beans;
+                  tin_beans += tb;
+                  resourceUpdate("received ");
+                }
+            
+              } else if(bonus.innerHTML == "Compass") {
+                compass = confirm("Oh no, it's a camping nightmare: you're lost! You pull out your compass and have a feeling that your camp is to the North.\n\nClick OK to go North, or Cancel to go South.");
+            
+                newP = document.createElement("p");
+                textNode = document.createTextNode("> You're lost!");
+                newP.appendChild(textNode);
+                log.insertBefore(newP, log.childNodes[0]);
+                
+                if(compass) {
+                  alert("You listen to your guts and follow the path heading North. You reach camp in no time.");
+                  newP = document.createElement("p");
+                  textNode = document.createTextNode("> You make it back to your camp in one piece.");
+                  newP.appendChild(textNode);
+                  log.insertBefore(newP, log.childNodes[0]);
+                } else {
+                  alert("Your instincts were never right anyway, you veer off to the South. Uh oh, is that a bear? You run for your life. Along the way you find some abandoned resources.\n\n-1 heart, +50 resources.");
+                  
+                  heart -= 1;
+                  health.removeChild(health.firstChild);
+            
+                  newP = document.createElement("p");
+                  textNode = document.createTextNode("> You barely make it back to your camp. You now have " + heart + " hearts.");
+                  newP.appendChild(textNode);
+                  log.insertBefore(newP, log.childNodes[0]); 
+                  
+                  fw = 50;
+                  firewood += fw;
+                  br = 50;
+                  berries += br;
+                  ms = 50;
+                  mushrooms += ms;
+                  tb = 50;
+                  tin_beans += tb;
+                  resourceUpdate("found ");
+                  checkHealth();
+                }
+              }
+            }
+            
+            function collect() { 
+              fw = Math.floor(Math.random() * (15) + 1);
+              firewood += fw;
+              br = Math.floor(Math.random() * (8) + 1);
+              berries += br;
+              ms = Math.floor(Math.random() * (5) + 1);
+              mushrooms += ms;
+              tb = Math.floor(Math.random() * (3));
+              tin_beans += tb;
+              
+              resourceUpdate("collected ");
+              
+              cr.disabled = true;
+              cr.classList.add("timeColor");
+              
+             btn1 = setTimeout(function() {
+                cr.disabled = false;
+                cr.classList.remove("timeColor");
+             }, 5000);
+            }
+            
+            function trade() { 
+              tradeQ = prompt("Welcome to the campgrounds trading post! If you've collected the specified number of resources, you can trade them here for energy boosters.\n\n[F] 50 Firewood [B] 40 Berries [M] 30 Mushrooms [T] 20 Tins of Beans");
+              if(tradeQ.toUpperCase() == "F") {
+                if(firewood >= 50) {
+                  firewood -= 50;
+                  heart += 1;
+                  hearts();
+                  checkHealth();
+                  payout.innerHTML = firewood + " firewood, " + berries + " berries, " + mushrooms + " mushrooms, " + tin_beans + " tins of beans";
+                  alert("You traded 50 firewood for 1 energy booster.");
+                  newP = document.createElement("p");
+                  textNode = document.createTextNode("> You traded 50 firewood for 1 energy booster. You now have " + heart + " hearts.");
+                  newP.appendChild(textNode);
+                  log.insertBefore(newP, log.childNodes[0]);
+                } else {
+                  alert("You do not have enough firewood!");
+                } 
+              } 
+              else if(tradeQ.toUpperCase() == "B") {
+                  if(berries >= 40) {
+                    berries -= 40;
+                    heart += 1;
+                    hearts();
+                    checkHealth();
+                    payout.innerHTML = firewood + " firewood, " + berries + " berries, " + mushrooms + " mushrooms, " + tin_beans + " tins of beans";
+                    alert("You traded 40 berries for 1 energy booster.");
+                    newP = document.createElement("p");
+                    textNode = document.createTextNode("> You traded 40 berries for 1 energy booster. You now have " + heart + " hearts.");
+                    newP.appendChild(textNode);
+                    log.insertBefore(newP, log.childNodes[0]);
+                  } else {
+                    alert("You do not have enough berries!");
+                  } 
+              }
+              else if(tradeQ.toUpperCase() == "M") {
+                if(mushrooms >= 30) {
+                  mushrooms -= 30;
+                  heart += 1;
+                  hearts();
+                  checkHealth();
+                  payout.innerHTML = firewood + " firewood, " + berries + " berries, " + mushrooms + " mushrooms, " + tin_beans + " tins of beans";
+                  alert("You traded 30 mushrooms for 1 energy booster.");
+                  newP = document.createElement("p");
+                  textNode = document.createTextNode("> You traded 30 mushrooms for 1 energy booster. You now have " + heart + " hearts.");
+                  newP.appendChild(textNode);
+                  log.insertBefore(newP, log.childNodes[0]);
+                } else {
+                  alert("You do not have enough mushrooms!");
+                } 
+              }
+              else if(tradeQ.toUpperCase() == "T") {
+                if(tin_beans >= 20) {
+                  tin_beans -= 20;
+                  heart += 1;
+                  hearts();
+                  checkHealth();
+                  payout.innerHTML = firewood + " firewood, " + berries + " berries, " + mushrooms + " mushrooms, " + tin_beans + " tins of beans";
+                  newP = document.createElement("p");
+                  textNode = document.createTextNode("> You traded 20 tins of beans for 1 energy booster. You now have " + heart + " hearts.");
+                  alert("You traded 20 tins of beans for 1 energy booster.");
+                  newP.appendChild(textNode);
+                  log.insertBefore(newP, log.childNodes[0]);
+                } else {
+                  alert("You do not have enough beans!");
+                }
+              } 
+              else {
+                error();
+                trade();
+              }
+              
+              tp.disabled = true;
+              tp.classList.add("timeColor");
+              
+             btn2 = setTimeout(function() {
+                tp.disabled = false;
+                tp.classList.remove("timeColor");
+             }, 15000);
+            }
+            
+            function take() {
+              if(firewood>0) {
+                fw = Math.floor(Math.random() * (firewood/2));
+                firewood -= fw;
+              }
+            
+              if(berries>0) {
+                br = Math.floor(Math.random() * (berries/2));
+                berries -= br;
+              }
+            
+              if(mushrooms>0) {
+                ms = Math.floor(Math.random() * (mushrooms/2));
+                mushrooms -= ms;
+              }
+              
+              if(tin_beans>0) {
+                tb = Math.floor(Math.random() * tin_beans);
+                tin_beans -= tb;
+              }
+              resourceUpdate("used ");
+            }
+            
+            function resourceUpdate(x) {
+              payout.innerHTML = firewood + " firewood, " + berries + " berries, " + mushrooms + " mushrooms, " + tin_beans + " tins of beans";
+              newP = document.createElement("p");
+              textNode = document.createTextNode("> You " + x + fw + " firewood, " + br + " berries, " + ms + " mushrooms, and " + tb + " tins of beans.");
+              newP.appendChild(textNode);
+              log.insertBefore(newP, log.childNodes[0]);
+            }
+        </script>
+    </body>
+</html>
