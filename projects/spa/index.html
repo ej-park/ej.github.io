@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $error_msg = [];
@@ -36,7 +36,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +81,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </section>
 
         <section class="reservation" id="nav_spa">
-            <?php if(isset($success)) { echo '<p class="text-success">' . $success . '</p>'; } ?>
+            <!-- <?php if(isset($success)) { echo '<p class="text-success">' . $success . '</p>'; } ?> -->
             
             <h3>Make a Reservation</h3>
             
@@ -89,26 +89,30 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                 <div class="question">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name" value="<?php echo $_POST['name'];  ?>">
-                    <?php if(isset($error_msg[0])) { echo '<p class="text-danger">' . $error_msg[0] . '</p>'; } ?>
+                    <!-- <input type="text" name="name" id="name" value="<?php echo $_POST['name'];  ?>">
+                    <?php if(isset($error_msg[0])) { echo '<p class="text-danger">' . $error_msg[0] . '</p>'; } ?> -->
+                    <input type="text" name="name" id="name" value="">
                 </div>
                 
                 <div class="question">
                     <label for="date1">Check In</label>
-                    <input type="date" name="date1" id="date1" value="<?php echo $_POST['date1'];  ?>">
-                    <?php if(isset($error_msg[1])) { echo '<p class="text-danger">' . $error_msg[1] . '</p>'; } ?>
+                    <input type="date" name="date1" id="date1" value="">
+                    <!-- <input type="date" name="date1" id="date1" value="<?php echo $_POST['date1'];  ?>">
+                    <?php if(isset($error_msg[1])) { echo '<p class="text-danger">' . $error_msg[1] . '</p>'; } ?> -->
                 </div>
                 
                 <div class="question">
                     <label for="date2">Check Out</label>
-                    <input type="date" name="date2" id="date2" value="<?php echo $_POST['date2'];  ?>">
-                    <?php if(isset($error_msg[2])) { echo '<p class="text-danger">' . $error_msg[2] . '</p>'; } ?>
+                    <input type="date" name="date2" id="date2" value="">
+                    <!-- <input type="date" name="date2" id="date2" value="<?php echo $_POST['date2'];  ?>">
+                    <?php if(isset($error_msg[2])) { echo '<p class="text-danger">' . $error_msg[2] . '</p>'; } ?> -->
                 </div>
 
                 <div class="question">
                     <label for="guests">Guests</label>
-                    <input type="number" name="guests" id="guests" value="<?php echo $_POST['guests'];  ?>">
-                    <?php if(isset($error_msg[3])) { echo '<p class="text-danger">' . $error_msg[3] . '</p>'; } ?>
+                    <input type="number" name="guests" id="guests" value="">
+                    <!-- <input type="number" name="guests" id="guests" value="<?php echo $_POST['guests'];  ?>">
+                    <?php if(isset($error_msg[3])) { echo '<p class="text-danger">' . $error_msg[3] . '</p>'; } ?> -->
                 </div>
 
                 
